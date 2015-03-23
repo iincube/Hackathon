@@ -1,19 +1,30 @@
 var UserAuth = require('./Auth.js');
 
 var auth = new UserAuth({
-  'username': 'accdeikortuy',
-  'password': 'youcrackedit'
+	'username': 'accdeikortuy',
+	'password': 'youcrackedit'
 });
 var result = auth.authenticate();
+
 if (result['status']) {
-  console.log('Authentication success');
+	console.log('Authentication success');
 } else {
-  console.log('Authentication failed');
+ 	console.log('Authentication failed');
+	throw new Error('Authentication failed');
 }
 
 hackAlgorithmToFindUsername(result['encrypted']);
 
+function cmp(a, b) { 
+   a = a.toLowerCase();b = b.toLowerCase();
+   if(a > b) 
+      return 1;
+   if(a < b) 
+      return -1; 
+   return 0;
+}
+
 function hackAlgorithmToFindUsername(encrypterPass) {
-  // complete the hack to find the username for any encrypted password from authorizer.js.
-  throw new Error("Missing hack to find username");
+    var result = (encrypterPass.split('').sort(cmp).join(''));
+    console.log("USERNAME:" + result);
 }
