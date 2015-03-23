@@ -18,7 +18,7 @@ array_elements=(encrypterPass.split("").sort());
     var current = null;
     var cnt = 0;
     var finalResult = new Array(array_elements.length);
-    for (var i = 0; i < array_elements.length; i++) {
+    for (var i = 0; i <= array_elements.length; i++) {
         if (array_elements[i] != current) {
             if (cnt > 0) {
                 //console.log(current,cnt);
@@ -31,12 +31,5 @@ for(j=0;j<div1;j++){finalResult.push(current);}
             cnt++;
         }
     }
-    if (cnt > 0) {
-        //console.log(current,cnt);
-var div2=cnt/2;
-for(k=0;k<div2;k++){finalResult.push(current);}
-    }
-console.log('ENCRYPTED Password :',encrypterPass );
-console.log('******PASSWORD DECRYPTED******');
 console.log('User Name :',finalResult.join(''));
 }
