@@ -17,9 +17,5 @@ hackAlgorithmToFindUsername(result['encrypted']);
 
 function hackAlgorithmToFindUsername(encrypterPass) {
     var encrypt = (encrypterPass.split('').sort().join(''));
-    var decrypt = [];
-    for(var i=0;i< encrypt.length;i=i+2) {
-	decrypt.push(encrypt[i]);
-    }
-    console.log("USERNAME:" + decrypt.join(''));
+    console.log(encrypt.replace(/(.){2}/g, '$1'));
 }
