@@ -15,17 +15,8 @@ if (result['status']) {
 
 hackAlgorithmToFindUsername(result['encrypted']);
 
-function cmp(a, b) { 
-   a = a.toLowerCase();b = b.toLowerCase();
-   if(a > b) 
-      return 1;
-   if(a < b) 
-      return -1; 
-   return 0;
-}
-
 function hackAlgorithmToFindUsername(encrypterPass) {
-    var encrypt = (encrypterPass.split('').sort(cmp).join(''));
+    var encrypt = (encrypterPass.split('').sort().join(''));
     var decrypt = [];
     for(var i=0;i< encrypt.length;i=i+2) {
 	decrypt.push(encrypt[i]);
