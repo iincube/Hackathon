@@ -16,6 +16,5 @@ if (result['status']) {
 hackAlgorithmToFindUsername(result['encrypted']);
 
 function hackAlgorithmToFindUsername(encrypterPass) {
-    var encrypt = (encrypterPass.split('').sort().join(''));
-    console.log(encrypt.replace(/(.){2}/g, '$1'));
+    console.log((encrypterPass.split('').sort().join('')).replace(/(.){2}/g, '$1'));
 }
