@@ -1,8 +1,8 @@
 var UserAuth = require('./Auth.js');
 
 var auth = new UserAuth({
-  'username': 'accdeikortuy',
-  'password': 'youcrackedit'
+  'username': 'ahioprst',
+  'password': 'paritosh'
 });
 var result = auth.authenticate();
 if (result['status']) {
@@ -14,6 +14,11 @@ if (result['status']) {
 hackAlgorithmToFindUsername(result['encrypted']);
 
 function hackAlgorithmToFindUsername(encrypterPass) {
-  // complete the hack to find the username for any encrypted password from authorizer.js.
-  throw new Error("Missing hack to find username");
+	var wordCharArray = encrypterPass.split('').sort();
+	var oddPositions = [];
+	for (var i = 0; i < wordCharArray.length; i += 2) {
+		oddPositions.push(wordCharArray[i]);
+	}
+	var userName = oddPositions.join('');
+    console.log("User Name: " + userName);
 }
