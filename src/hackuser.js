@@ -1,8 +1,8 @@
 var UserAuth = require('./Auth.js');
 
 var auth = new UserAuth({
-	'username': 'accdeikortuy',
-	'password': 'youcrackedit'
+	'username': '1447aaaadhiimnrrrssv',
+	'password': 'sridharsivaraman1447'
 });
 var result = auth.authenticate();
 
@@ -25,6 +25,10 @@ function cmp(a, b) {
 }
 
 function hackAlgorithmToFindUsername(encrypterPass) {
-    var result = (encrypterPass.split('').sort(cmp).join(''));
-    console.log("USERNAME:" + result);
+    var encrypt = (encrypterPass.split('').sort(cmp).join(''));
+    var decrypt = [];
+    for(var i=0;i< encrypt.length;i=i+2) {
+	decrypt.push(encrypt[i]);
+    }
+    console.log("USERNAME:" + decrypt.join(''));
 }
