@@ -1,8 +1,8 @@
 var UserAuth = require('./Auth.js');
 
 var auth = new UserAuth({
-	'username': '1447aaaadhiimnrrrssv',
-	'password': 'sridharsivaraman1447'
+	'username': 'aaaadhiimnrrrssv',
+	'password': 'sridharsivaraman'
 });
 var result = auth.authenticate();
 
