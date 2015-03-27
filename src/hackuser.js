@@ -33,12 +33,12 @@ function hackAlgorithmToFindUsername(encrypted_password) {
         }
     }
 
-    var result_array = [];
+    var result = '';
     for(var i = 0; i < encrypted_array.length;i = i + 2) {
-       result_array.push(encrypted_array[i]);
+       result += encrypted_array[i];
     }
 
-    console.log("HACKED USERNAME: " + result_array.join(''));
+    console.log("HACKED USERNAME: " + result);
     
 }
 
